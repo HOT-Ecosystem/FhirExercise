@@ -1,0 +1,9 @@
+
+
+https://developer.healthgorilla.com/docs/fhir-restful-api#organization
+
+http://localhost:8080/hapi-fhir-jpaserver/home?encoding=null&pretty=true
+ 
+http://hl7.org/fhir/resource.html
+
+
