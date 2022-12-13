@@ -1,5 +1,5 @@
 #!/bin/bash
-
+url=http://localhost:$PORT/fhir/
 curl -i \
   --header "Content-Type: application/fhir+json; charset=UTF-8" \
   --header "Accept-Charset: utf-8"\
@@ -7,5 +7,5 @@ curl -i \
   --header "Accept-Encoding: gzip"\
   --request POST \
   --data @1_patient.json\
-  http://localhost:8080/hapi-fhir-jpaserver/fhir/Patient?_format=json&_pretty=true
+  $url/Patient?_format=json&_pretty=true
 echo $?
