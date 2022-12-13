@@ -6,8 +6,11 @@ A down-in-the-weeds look at the FHIR Restful interface and JSON representations.
 
 One way to learn from this is to run it  yourself. Since the IDs will be different, after you load each step (organization, patient, encounter, etc.) you have to query for that resource and find the ID assigned. Then link the next level back using those IDs. For example, after organization is inserted, find the ID and edit patient to refer to that organization. Only then, upload the patient.
 
+### I'm learning...
+This is not a relational db. I started out wanting to find patients that a specific condition and was thinking of a query for patients that joins to condition for the filtering criteria. I suspect the way to do this is look for **instances** of the resource Condition that have the type of disease you're interested in, like renal insufficiency, and those will have references of the patients in them.
+
 ## JS (TBD) - fire up a headless JavaScript interpreter and use it to tweak the data read in from JSON with minimal coding
-The next step might be to code this in JavaScript and use it to read in the python after each step to find the IDs and update the links before uploading the next step. I'd use something like nashorn, a javascript interpreter that runs outside the browser. (don't quote me, I haven't done this yet, and haven't messed with JS like this in quite a few years (2016?). Stay tuned).
+The next step might be to code this in JavaScript and use it to read in the python after each step to find the IDs and update the links before uploading the next step. I'd use something like nashorn or V8, a javascript interpreter that runs outside the browser. IIRC these are implemented in java, but that's not the point or necessary.
 
 ## Java (TBD) - have a look at how the Phenoppackets folks do this in Java. Do they layer on top of the HAPI JPA? If so, re=order this.
 

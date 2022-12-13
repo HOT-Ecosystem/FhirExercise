@@ -6,6 +6,6 @@ curl -i \
   --header "User-Agent: HAPI-FHIR/5.0.0 (FHIR Client; FHIR 4.0.1/R4; apache)"\
   --header "Accept-Encoding: gzip"\
   --request POST \
-  --data @../data/1_patient.json\
+  --data @../data/1a_patient.json\
   $url/Patient?_format=json&_pretty=true
 echo $?
