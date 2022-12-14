@@ -1,6 +1,16 @@
 # FHIR Exercise
 This repo is a collection of increasingly involved exercises looking into the FHIR api. It starts with a very low-tech method using cURL and json, and builds up.
 
+## Goals / Questions (from TSDemoBoard #12)
+- How do you query for simple patients, like by name? Patient$match
+    - (not done)
+- How do you query for patients with a given condition? specific prescribed meds, administered meds?
+    - Query for the Condition Resources. They will have links back to the patients. AFAICT, joining back is an application, not data-store (database) thing.
+- How do you find (whatever) meds that have been prescribed to a particular patient?
+    - Much like the Condition question above, but I need to figure out and test the trail from Patient to Medication.
+- Do or can valuesets play into this and how?
+    - using the REST API's Search functionality with an "in" search. Like an "in list" in SQL, except that the value set (singular) embodies the list.  (not working yet)
+
 ## bash (WIP) - low tech BASH scripts using cURL
 A down-in-the-weeds look at the FHIR Restful interface and JSON representations. This is a set of bash scripts containing REST calls using cURL to load data in JSON format. It requires some hands-on effort to link the data elements after loading them when IDs are assigned.  This requires the example set to be small, but makes for a small example that shows the data without having to immediately take on a client codebase as well.
 
