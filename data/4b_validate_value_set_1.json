@@ -1,0 +1,21 @@
+{
+  "ResourceType" : "Parameters",
+  "parameter" : [
+    {
+      "name" : "codeableConcept",
+      "valueCodeableConcept" : {
+        "coding" : {
+          "system" : "http://snomed.info/sct",
+          "code" : "36225005",
+          "display" : "test"
+         }
+      }
+    },
+    {
+      "name" : "valueSet",
+      "resource": {
+        "resourceType" : "ValueSet"
+      }
+    }
+  ]
+}
