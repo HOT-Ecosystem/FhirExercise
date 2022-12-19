@@ -1,6 +1,10 @@
 # FHIR Exercise
 This repo is a collection of increasingly involved exercises looking into the FHIR api. It starts with a very low-tech method using cURL and json, and builds up.
 
+## ABSOLUTELY refer to the ACS Page! They show some useful queries! 
+https://build.fhir.org/ig/HL7/vulcan-rwd/acs.html
+
+
 ## Goals / Questions (from TSDemoBoard #12)
 - How do you query for simple patients, like by name? Patient$match
     - (not done)
