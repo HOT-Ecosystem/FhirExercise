@@ -1,12 +1,13 @@
 #!/bin/bash
+# TODO: only retrieves a single page.
+# this is implemented in JS in the TimsUI, and in python in the TSDemoboard notebook for valuesets
 url=http://localhost:$PORT/fhir/
+
 curl -i \
   --header "Content-Type: application/fhir+json; charset=UTF-8" \
   --header "Accept-Charset: utf-8"\
   --header "User-Agent: HAPI-FHIR/5.0.0 (FHIR Client; FHIR 4.0.1/R4; apache)"\
-  --header "Accept-Encoding: gzip"\
-  --request POST \
-  --data @../data/4_value_set.json\
-  --output value_set_input.txt \
-  $url/ValueSet?_format=json&_pretty=true
-echo $?
+  --output query_all_value_sets.json \
+  --request GET \
+  $url/ValueSet
+
