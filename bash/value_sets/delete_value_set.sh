@@ -2,6 +2,10 @@
 # ARG for id of value_set to delete
 
 VS_ID=$1
+if [[ $VS_ID == '' ]] ; then
+    echo "need an ID as the first argument"
+    exit 1;
+fi
 echo "DELETING value set with id \"$VS_ID\""
 
 url=http://localhost:$PORT/fhir/

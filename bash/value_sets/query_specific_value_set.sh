@@ -2,6 +2,10 @@
 ID=$1
 url=http://localhost:$PORT/fhir/
 
+if [[ $ID == '' ]] ; then
+    echo "need an ID as the first argument"
+    exit 1;
+fi
 echo "QUERYING for id \"$ID\""
 
 if [[ $ID == '' ]] ; then
