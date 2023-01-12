@@ -3,11 +3,11 @@ url=http://localhost:$PORT/fhir/
 PATIENT_ID=$1
 ENCOUNTER_ID=$2
 if [[ $PATIENT_ID == '' ]] ; then
-    echo "ERROR: post_encounter.sh needs an ID as the first argument, got \"$PATIENT_ID\""
+    echo "ERROR: post_condition.sh needs an ID as the first argument, got \"$PATIENT_ID\""
     exit 1;
 fi
 if [[ $ENCOUNTER_ID == '' ]] ; then
-    echo "ERROR: post_encounter.sh needs an ID as the second argument, got \"$ENCOUNTER_ID\""
+    echo "ERROR: post_condition.sh needs an ID as the second argument, got \"$ENCOUNTER_ID\""
     exit 1;
 fi
 
@@ -19,7 +19,7 @@ curl -i \
   --header "Content-Type: application/fhir+json; charset=UTF-8" \
   --header "Accept-Charset: utf-8"\
   --header "User-Agent: HAPI-FHIR/5.0.0 (FHIR Client; FHIR 4.0.1/R4; apache)"\
-  --header "Accept-Encoding: gzip"\
+  --output post_condition.txt \
   --request POST \
   --data @condition_with_args.json\
   $url/Condition?_format=json&_pretty=true

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if (( 1 )) ; then 
+if (( 0 )) ; then 
    ./post_organization.sh
     sleep 3
 fi
@@ -21,6 +21,7 @@ if (( 1 )) ; then
     fi
 else
        PERSON_1_ID=`grep \"id\" post_patient_1.txt | awk -F: '{print $2}' | sed -r  "s/.*\"(.*)\".*/\\1/"`
+       echo "Patient 1: $PERSON_1_ID"
 fi
 
 if (( 1 )) ; then 
@@ -37,15 +38,18 @@ if (( 1 )) ; then
     fi
 else
         PERSON_2_ID=`grep \"id\" post_patient_2.txt | awk -F: '{print $2}' | sed -r  "s/.*\"(.*)\".*/\\1/"`
+        echo "Patient 2: $PERSON_2_ID"
 fi
 
-echo "Person 1 id: $PERSON_1_ID"
-echo "Person 2 id: $PERSON_2_ID"
 
 if (( 1 )) ; then 
+    echo "WTF $PERSON_1_ID"
     ./post_encounter.sh $PERSON_1_ID
     sleep 3
     ENCOUNTER_ID=`grep \"id\" post_encounter.txt | awk -F: '{print $2}' | sed -r  "s/.*\"(.*)\".*/\\1/"`
-    echo "ORG $ORGANIZATION_ID"
+    echo "ENCOUNTER $ENCOUNTER_ID"
+else
+    ENCOUNTER_ID=`grep \"id\" post_encounter.txt | awk -F: '{print $2}' | sed -r  "s/.*\"(.*)\".*/\\1/"`
+    echo "ENCOUNTER $ENCOUNTER_ID"
 fi
 

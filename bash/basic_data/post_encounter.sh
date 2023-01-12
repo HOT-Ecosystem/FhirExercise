@@ -6,7 +6,7 @@ if [[ $PATIENT_ID == '' ]] ; then
     exit 1;
 fi
 
-sed -r "s/Patient\/XXX/Patient\/$Patient_ID/"  encounter.json > encounter_with_arg.json
+sed -r "s/Patient\/XXX/Patient\/$PATIENT_ID/"  encounter.json > encounter_with_arg.json
 
 curl -i \
   --header "Content-Type: application/fhir+json; charset=UTF-8" \

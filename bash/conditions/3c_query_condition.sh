@@ -1,11 +1,9 @@
 #!/bin/bash
- 
-# COMBINED condtion and severity
-
-# https://build.fhir.org/search.html#combining
-
 url=http://localhost:$PORT/fhir/
 
+ 
+# COMBINED condtion and severity
+# https://build.fhir.org/search.html#combining
 curl -i \
   --header "Content-Type: application/fhir+json; charset=UTF-8" \
   --header "Accept-Charset: utf-8"\
@@ -14,18 +12,18 @@ curl -i \
   --request GET \
    "$url/Condition?code=255604002,severity=255604002"
 
-# condition and mild, no results; as expected
-   "$url/Condition?code=255604002,severity=255604002"
+# condition and mild, no results; as expected  MILD???
+#   "$url/Condition?code=255604002,severity=255604002"
 
-# condition and sever, returns the one mathing patients; as expected
+# condition and sever, returns the one matching patients; as expected GOOD
 #  $url/Condition?code=255604002$severity=24484000"
 
 
 
-# just condition from 3b
+# just condition from 3b RENAL ISUFF GOOD
 #  "$url/Condition?code=36225005"
 
-# just severity, Severe
+# just severity, Severe GOOD
 #  "$url/Condition?severity=24484000"
 
 # just severity, Mild, no results becuase I don't have anhy data with Mild conditions. OK
