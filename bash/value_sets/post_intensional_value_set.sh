@@ -6,8 +6,8 @@ curl -i \
   --header "Accept-Charset: utf-8"\
   --header "User-Agent: HAPI-FHIR/5.0.0 (FHIR Client; FHIR 4.0.1/R4; apache)"\
   --request POST \
-  --data @value_set_intensional.json\
-  --output value_set_intensional.txt \
+  --data @value_set_intensional.json \
+  --output post_intensional_value_set.txt \
   $url/ValueSet?_format=json&_pretty=true
 
 echo $?

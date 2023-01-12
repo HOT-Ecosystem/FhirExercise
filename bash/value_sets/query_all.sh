@@ -40,8 +40,8 @@ fi
 
 
 # Intensional ValueSet
-./post_intensional_value_set.sh 
-VALUE_SET_ID=`grep \"id\" value_set_intensional.txt | awk -F: '{print $2}' | sed -r  "s/.*\"(.*)\".*/\\1/"`
+VALUE_SET_ID=`grep \"id\" post_intensional_value_set.txt | awk -F: '{print $2}' | sed -r  "s/.*\"(.*)\".*/\\1/"`
+post_intensional_value_set.txt
 if [[ $VALUE_SET_ID
 
 ./expand_value_set.sh $VALUE_SET_ID

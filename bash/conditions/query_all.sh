@@ -8,7 +8,8 @@ ENCOUNTER_ID=`grep \"id\" ../basic_data/post_encounter.txt | awk -F: '{print $2}
 echo "PATIENT $PATIENT_1_ID"
 echo "ENCOUNTER $ENCOUNTER_ID"
 
-if (( 1 )) ; then
+
+if (( 0 )) ; then
     ./post_condition.sh $PATIENT_1_ID $ENCOUNTER_ID
     sleep 3
 
@@ -18,3 +19,11 @@ if (( 1 )) ; then
         exit 1
     fi
 fi 
+
+# OK
+VALUE_SET_ID=`../value_sets/grep_value_set.sh`
+./query_condition_w_vs.sh $VALUE_SET_ID
+
+# failing with that weird bug where it thinks the snomed code is from LOINC
+#INTENSIONAL_VALUE_SET_ID=`../value_sets/grep_intensional_value_set.sh`
+#./query_condition_w_vs.sh $INTENSIONAL_VALUE_SET_ID
