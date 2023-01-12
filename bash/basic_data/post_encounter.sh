@@ -6,7 +6,7 @@ if [[ $PATIENT_ID == '' ]] ; then
     exit 1;
 fi
 
-sed -r "s/Person\/XXX/Patient\/$Patient_ID/"  patient_1.json > patient_1_with_org.json
+sed -r "s/Patient\/XXX/Patient\/$Patient_ID/"  encounter.json > encounter_with_arg.json
 
 curl -i \
   --header "Content-Type: application/fhir+json; charset=UTF-8" \
@@ -14,6 +14,6 @@ curl -i \
   --header "User-Agent: HAPI-FHIR/5.0.0 (FHIR Client; FHIR 4.0.1/R4; apache)"\
   --output post_encounter.txt \
   --request POST \
-  --data @encounter.json\
+  --data @encounter_with_arg.json\
   $url/Encounter?_format=json&_pretty=true
 echo $?
