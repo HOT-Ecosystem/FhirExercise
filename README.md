@@ -1,8 +1,6 @@
 # FHIR Exercise
-This repo is a collection of increasingly involved exercises looking into the FHIR api. It starts with a very low-tech method using cURL and json, and builds up.
-
-## ABSOLUTELY refer to the ACS Page! They show some useful queries! 
-https://build.fhir.org/ig/HL7/vulcan-rwd/acs.html
+This repo is a collection of simple scripts using cURL and json to explore the FHIR API. Bash isn't the prettiest, but I chose it here because the REST API calls are pretty clearly laid out.
+BTW, the ACS page has some good queries: https://build.fhir.org/ig/HL7/vulcan-rwd/acs.html
 
 
 ## Goals / Questions (from TSDemoBoard #12)
@@ -20,16 +18,8 @@ A down-in-the-weeds look at the FHIR Restful interface and JSON representations.
 
 One way to learn from this is to run it  yourself. Since the IDs will be different, after you load each step (organization, patient, encounter, etc.) you have to query for that resource and find the ID assigned. Then link the next level back using those IDs. For example, after organization is inserted, find the ID and edit patient to refer to that organization. Only then, upload the patient.
 
-### I'm learning...
-This is not a relational db. I started out wanting to find patients that a specific condition and was thinking of a query for patients that joins to condition for the filtering criteria. I suspect the way to do this is look for **instances** of the resource Condition that have the type of disease you're interested in, like renal insufficiency, and those will have references of the patients in them.
-
-## JS (TBD) - fire up a headless JavaScript interpreter and use it to tweak the data read in from JSON with minimal coding
-The next step might be to code this in JavaScript and use it to read in the python after each step to find the IDs and update the links before uploading the next step. I'd use something like nashorn or V8, a javascript interpreter that runs outside the browser. IIRC these are implemented in java, but that's not the point or necessary.
-
-## Java (TBD) - have a look at how the Phenoppackets folks do this in Java. Do they layer on top of the HAPI JPA? If so, re=order this.
-
-
-## Java 2 (TBD) - less related, but look at the HAPI-FHIR JPA classes and clarify their relationship to the Resources
+## TODO
+I hope to go further with these exercises, exploring some of the layers on top of FHIR available in either Python or Java.
 
 
 
